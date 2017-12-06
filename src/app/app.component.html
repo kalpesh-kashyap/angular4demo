@@ -1,26 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <input type="text" class="form-control" [value]="selectedUser" (keyup)="changepatter($event)" maxlength="10"
-         onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
-  <table class="table table-bordered">
-    <thead>
-    <tr>
-      <th>Title</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let data of files">
-      <td><a href="javascript:void(0);" (click)="myModal.open();passDataToModal(data);">{{data.title}}</a></td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-<modal #myModal>
-  <modal-header>
-    <h4>Modal header</h4>
-  </modal-header>
-  <modal-content>
-    <iframe [src]="pdf.url | safe" height="100%" width="100%"></iframe>
-  </modal-content>
-</modal>
-
+<br><br>
+<myApp-entry-form></myApp-entry-form>
+<myApp-broad-cast-test></myApp-broad-cast-test>

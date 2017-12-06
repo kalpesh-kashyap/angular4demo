@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-title">Entry Form</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <form class="form-horizontal" [formGroup]="entryForm" (ngSubmit)="saveEntry(entryForm.value)">
+              <div class="form-group row" [ngClass]="{'has-error': entryForm.controls['firstName'].dirty &&
+              entryForm.controls['firstName'].errors}">
+                <label class="col-md-2">First Name</label>
+                <div class="col-md-10">
+                  <input type="text" class="form-control" formControlName="firstName" required>
+                  <div class="form-control-feedback"
+                       *ngIf="entryForm.controls['firstName'].dirty && entryForm.controls['firstName'].errors">Value
+                    required
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row" [ngClass]="{'has-error': entryForm.controls['lastName'].dirty && entryForm.controls['lastName'] &&
+              entryForm.controls['lastName'].errors}">
+                <label class="col-md-2">Last Name</label>
+                <div class="col-md-10">
+                  <input type="text" class="form-control" formControlName="lastName" required>
+                  <div class="form-control-feedback" *ngIf="entryForm.controls['lastName'].dirty && entryForm.controls['lastName'] &&
+              entryForm.controls['lastName'].errors">Required Filed
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row" [ngClass]="{'has-error': entryForm.controls['email'].dirty && (entryForm.controls['email'] &&
+              entryForm.controls['email'].errors || entryForm.controls['email'].hasError('pattern'))}">
+                <label class="col-md-2">Email</label>
+                <div class="col-md-10">
+                  <input type="email" class="form-control" formControlName="email"
+                         pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+                </div>
+              </div>
+              <div class="form-group row" [ngClass]="{'has-error': entryForm.controls['password'].dirty && entryForm.controls['password'] &&
+              entryForm.controls['password'].errors}">
+                <label class="col-md-2">Password</label>
+                <div class="col-md-10">
+                  <input type="password" class="form-control" formControlName="password" required>
+                </div>
+              </div>
+              <div class="form-group row" [ngClass]="{'has-error': entryForm.controls['lastName'].dirty && entryForm.controls['lastName'] &&
+              entryForm.controls['lastName'].errors}">
+                <label class="col-md-2">Confirm Password</label>
+                <div class="col-md-10">
+                  <input type="password" class="form-control" formControlName="confirmPassword" required>
+                  <div class="form-control-feedback" *ngIf="entryForm.get('password','password').value != entryForm.get('confirmPassword','confirmPassword').value &&
+                    entryForm.get('confirmPassword','confirmPassword').value != null">Password mismatch
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <button type="submit" [disabled]="entryForm.invalid" class="btn btn-primary">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-title"></div>
+      <div class="panel-body">
+        <myApp-user-list #child (onUserEdit)="editUser($event);"></myApp-user-list>
+      </div>
+    </div>
+  </div>
+</div>
