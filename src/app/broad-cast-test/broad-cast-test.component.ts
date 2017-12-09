@@ -7,7 +7,7 @@ import {BroadCaster} from "../broadCaster";
     styleUrls: ['./broad-cast-test.component.scss']
 })
 export class BroadCastTestComponent implements OnInit {
-    userObj = {_id: 0, firstName: 'test', lastName: 'test123', email: 'test@test.com', password: 123456};
+    userObj = {_id: null, firstName: 'test', lastName: 'test123', email: 'test@test.com', password: 123456};
 
     constructor(private broadcaster: BroadCaster) {
     }
