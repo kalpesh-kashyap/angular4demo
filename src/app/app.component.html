@@ -1,3 +1,10 @@
 <br><br>
 <myApp-entry-form></myApp-entry-form>
 <myApp-broad-cast-test></myApp-broad-cast-test>
+{{count}}
+<app-datapassing-component [numberCount]="count" (result)="onChange($event)" #child>
+  <div class="alert alert-info">
+    from chile component displaying between component
+  </div>
+</app-datapassing-component>
+My name is {{ child.testData }}

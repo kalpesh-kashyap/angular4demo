@@ -7,6 +7,7 @@ import {EntryFormComponent} from './entry-form/entry-form.component';
 import {UserListComponent} from './user-list/user-list.component';
 import { MovingListBoxComponent } from './moving-list-box/moving-list-box.component';
 import { BroadCastTestComponent } from './broad-cast-test/broad-cast-test.component';
+import { DatapassingComponentComponent } from './datapassing-component/datapassing-component.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { BroadCastTestComponent } from './broad-cast-test/broad-cast-test.compon
     EntryFormComponent,
     UserListComponent,
     MovingListBoxComponent,
-    BroadCastTestComponent
+    BroadCastTestComponent,
+    DatapassingComponentComponent
   ],
   imports: [
     BrowserModule,
